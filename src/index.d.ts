@@ -1,8 +1,8 @@
+import getFileContributors from './index';
+
 export interface Author {
-  [index: string]: any
   login: string,
-  id: string | number
-  email?: string
+  id: number,
   node_id: string
   avatar_url: string
   gravatar_id: string
@@ -55,35 +55,4 @@ export interface Commit {
   author: Author
 }
 
-/**
- * Gets a list of contributors to a file committed to github
- * @param owner Repository Owner
- * @param repo Name of repository
- * @param path File path relative to repository root
- * @returns Promise<Author[]>
- */
-const getFileContributors = (owner: string, repo: string, path: string) : Promise<Author[]> => {
-
-  const authors: Author[] = []
-  const consumedAuthors : Author = {} as Author
-
-  return fetch(`https://api.github.com/repos/${owner}/${repo}/commits?path=${path}`)
-  .then(res => res.json())
-  .then((commits: Commit[]) => {
-    commits.forEach((commit: Commit) => {
-      const id = commit.author.login
-      if(consumedAuthors[id]) {
-        return
-      }
-
-      consumedAuthors[id] = true
-      authors.push(commit.author)
-    })
-    return authors
- })
-}
-
 export default getFileContributors
-
-
-
