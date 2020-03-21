@@ -4,7 +4,7 @@
 
 Ever wonder who's contributed to a specific file on github? `file-contributors` gives you simple way to get all contributors to a specific file on Github.
 
-<h3>See demo 👉🏽 </h3>
+<h3>🤖 See over-engineered demo on <a href="https://codesandbox.io/s/github-file-contributors-uyl6l">codesandbox</a></h3>
 
 ### ⚡️ Installation
 Install `file-contributors` from npm
