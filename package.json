@@ -1,6 +1,6 @@
 {
   "name": "file-contributors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny utility function to get all contributors for a single file on Github",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
